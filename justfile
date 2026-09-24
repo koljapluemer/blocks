@@ -12,10 +12,12 @@ dev:
 run:
     npx expo run:android
 
-# Build a release APK (android/app/build/outputs/apk/release/app-release.apk).
+# Build a release APK (android/app/build/outputs/apk/release/app-release.apk)
+# and open its folder in Nautilus.
 apk:
     npx expo prebuild --platform android
     cd android && ./gradlew assembleRelease
+    nautilus android/app/build/outputs/apk/release &
 
 # Build the release build and (re)install + launch it on the connected device.
 reinstall:
